@@ -7,6 +7,7 @@ class Blockchain {
 
     constructor() {
         this.chain = [new Block(date)]; // this.chain will contain all of the blocks
+        this.difficulty = 3;
     }
 
     getLastBlock() { // gets the last block on the blockchain
@@ -17,6 +18,7 @@ class Blockchain {
     appendBlock(block) {
         block.prevHash = this.getLastBlock().hash;
         block.hash = block.getHash();
+        block.mine(this.difficulty); // wooooo minecraft
 
         const immutableBlock = Object.freeze(block); // freeze to ensure immutability
         this.chain.push(immutableBlock);
