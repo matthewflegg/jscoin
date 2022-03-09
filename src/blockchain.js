@@ -3,10 +3,10 @@ import { Block } from "./block";
 const date = Date.now().toString();
 const genesisBlock = new Block(date);
 
-class Blockchain {
+export class Blockchain {
 
     constructor() {
-        this.chain = [new Block(date)]; // this.chain will contain all of the blocks
+        this.chain = [genesisBlock]; // this.chain will contain all of the blocks
         this.difficulty = 3;
     }
 
