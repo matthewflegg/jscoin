@@ -9,7 +9,7 @@ class Blockchain {
         this.chain = [new Block(date)]; // this.chain will contain all of the blocks
     }
 
-    getLastBlock() { // Gets the last block on the blockchain
+    getLastBlock() { // gets the last block on the blockchain
         const lastIndex = this.chain.length - 1;
         return this.chain[lastIndex];
     }
@@ -18,11 +18,11 @@ class Blockchain {
         block.prevHash = this.getLastBlock().hash;
         block.hash = block.getHash();
 
-        const immutableBlock = Object.freeze(block); // Freeze to ensure immutability
+        const immutableBlock = Object.freeze(block); // freeze to ensure immutability
         this.chain.push(immutableBlock);
     }
 
-    isValid(blockchain = this) { // Validate the blockchain
+    isValid(blockchain = this) { // validate the blockchain
 
         for (let i = 1; i < blockchain.chain.length; i++) {
             const currentBlock = blockchain.chain[i];
