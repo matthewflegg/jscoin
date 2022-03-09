@@ -1,0 +1,24 @@
+{
+  "name": "jscoin",
+  "version": "0.1.0-rc.1",
+  "description": "A simple blockchain created in node.js.",
+  "main": "main.js",
+  "scripts": {
+    "test": "console.log('It's working')"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matthewflegg/jscoin.git"
+  },
+  "keywords": [
+    "blockchain",
+    "crypto",
+    "hashing"
+  ],
+  "author": "Matthew Flegg",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matthewflegg/jscoin/issues"
+  },
+  "homepage": "https://github.com/matthewflegg/jscoin#readme"
+}
