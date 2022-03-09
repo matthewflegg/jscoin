@@ -8,6 +8,7 @@ export class Blockchain {
     constructor() {
         this.chain = [genesisBlock]; // this.chain will contain all of the blocks
         this.difficulty = 3;
+        this.blockTime = 30000;
     }
 
     getLastBlock() { // gets the last block on the blockchain
@@ -22,6 +23,7 @@ export class Blockchain {
 
         const immutableBlock = Object.freeze(block); // freeze to ensure immutability
         this.chain.push(immutableBlock);
+        this.difficulty += Date.now() - parseInt(this.getLastBlock().timestamp) < this.blockTime ? 1 : -1;
     }
 
     isValid(blockchain = this) { // validate the blockchain
